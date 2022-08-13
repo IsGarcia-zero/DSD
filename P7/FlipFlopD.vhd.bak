@@ -1,0 +1,19 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
+
+ENTITY FlipFlopD is
+	port(
+		D,reloj: in std_logic
+		s: out std_logic);
+END FlipFlopD;
+
+ARCHITECTURE arD OF FlipFlopD is
+	BEGIN
+		PROCESS(reloj,D)IS
+			BEGIN
+				IF(reloj'event and reloj = '1') then
+					s <= not D;
+				END IF;
+		END PROCESS;
+END arD;
